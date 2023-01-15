@@ -1,0 +1,215 @@
+.about-us {
+  margin-bottom: 58px;
+}
+
+.about-us__container {
+  .container-width;
+}
+
+.about-us__title {
+  font-weight: 700;
+  font-size: 25px;
+  color: @bold-text-color;
+
+  margin: 0;
+}
+
+.about-us__list {
+  display: grid;
+  grid-template-areas:
+    "pure-materials"
+    "scandinavian-style"
+    "likes"
+    "tied-toy"
+    "support"
+    "gift-wrap";
+
+  .reset-list;
+}
+
+.about-us__item {
+  position: relative;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: @bold-text-color;
+
+  margin-top: 83px;
+
+  &--pure-materials {
+    grid-area: pure-materials;
+  }
+
+  &--tied-toy {
+    grid-area: tied-toy;
+  }
+
+  &--scandinavian-style {
+    grid-area: scandinavian-style;
+  }
+
+  &--support {
+    grid-area: support;
+  }
+
+  &--likes {
+    grid-area: likes;
+  }
+
+  &--gift-wrap {
+    grid-area: gift-wrap;
+  }
+
+  &--pure-materials::before,
+  &--tied-toy::before,
+  &--scandinavian-style::before,
+  &--support::before,
+  &--likes::before,
+  &--gift-wrap::before {
+    position: absolute;
+    top: -57px;
+    left: 0;
+
+    background-repeat: no-repeat;
+
+    content: "";
+  }
+
+  &--pure-materials::before {
+    left: 8px;
+
+    background-image: url("../img/about-us/flower.svg");
+
+    width: 33px;
+    height: 38px;
+  }
+
+  &--tied-toy::before {
+    top: -54px;
+    left: 4px;
+
+    background-image: url("../img/about-us/clew.svg");
+
+    width: 35px;
+    height: 34px;
+  }
+
+  &--scandinavian-style::before {
+    background-image: url("../img/about-us/banknote.svg");
+
+    width: 47px;
+    height: 27px;
+  }
+
+  &--support::before {
+    top: -54px;
+    left: -6px;
+
+    background-image: url("../img/about-us/rocket.svg");
+
+    width: 55px;
+    height: 23px;
+  }
+
+  &--likes::before {
+    top: -51px;
+    left: 7px;
+
+    background-image: url("../img/about-us/heart.svg");
+
+    width: 34px;
+    height: 27px;
+  }
+
+  &--gift-wrap::before {
+    left: 3px;
+
+    background-image: url("../img/about-us/present.svg");
+
+    width: 33px;
+    height: 32px;
+  }
+}
+
+.about-us__text {
+  margin: 0;
+}
+
+// before tablet
+@media (min-width: @before-tablet-container-width) {
+  .about-us__list {
+    grid-template-areas:
+      "pure-materials tied-toy"
+      "scandinavian-style support"
+      "likes gift-wrap";
+  }
+}
+
+// tablet
+@media (min-width: @tablet-container-width) {
+  .about-us__list {
+    column-gap: 59px;
+  }
+
+  .about-us {
+    margin-bottom: 83px;
+  }
+
+  .about-us__title {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .about-us__item {
+    font-size: 20px;
+    line-height: 22px;
+
+    margin-top: 111px;
+
+    &--pure-materials,
+    &--tied-toy {
+      margin-top: 95px;
+    }
+
+    &--pure-materials::before,
+    &--tied-toy::before,
+    &--scandinavian-style::before,
+    &--support::before,
+    &--likes::before,
+    &--gift-wrap::before {
+      bottom: calc(100% + 21px);
+    }
+  }
+}
+
+// computer
+@media (min-width: @computer-container-width) {
+  .about-us {
+    margin-bottom: 90px;
+  }
+
+  .about-us__container {
+    padding-left: @left-indent-for-computer;
+  }
+
+  .about-us__title {
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .about-us__list {
+    grid-template-columns: repeat(2, 293px);
+  }
+
+  .about-us__item {
+    &--pure-materials::before,
+    &--tied-toy::before,
+    &--scandinavian-style::before,
+    &--support::before,
+    &--likes::before,
+    &--gift-wrap::before {
+      bottom: calc(100% + 28px);
+    }
+  }
+}
